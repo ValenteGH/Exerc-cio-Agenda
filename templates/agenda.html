@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda de Contatos</title>
+</head>
+<body>
+  <h1>Agenda de Contatos</h1>
+  <form action="/create" method="POST">
+    <input name="title">
+    <input e-mail="title">
+    <input phone="title">
+    <button type="submit">
+      Adicionar
+    </button>
+  </form>
+  <ul>
+    {% for item in contacts %}
+      <li>{{ item.title }}</li>
+    {% endfor %}
+  </ul>  
+</body>
+</html>
