@@ -16,7 +16,7 @@ def agenda():
 @app.route('/create', methods=['POST'])
 def create():
   title = request.form.get('title')
-  todos.append({'title': title})
+  contacts.append({'title': title})
   return redirect('/')
     
 if __name__ == '__main__':
