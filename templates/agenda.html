@@ -9,16 +9,17 @@
 <body>
   <h1>Agenda de Contatos</h1>
   <form action="/create" method="POST">
-    <input name="title">
-    <input e-mail="title">
-    <input phone="title">
+    <input name="name" placeholder="Nome">
+    <input name="email" placeholder="E-mail">
+    <input name="phone" placeholder="Telefone">
     <button type="submit">
       Adicionar
     </button>
   </form>
   <ul>
-    {% for item in contacts %}
-      <li>{{ item.title }}</li>
+    {% for name in contacts %}
+      <li>{{ name['name'] }}</li>
+      
     {% endfor %}
   </ul>  
 </body>

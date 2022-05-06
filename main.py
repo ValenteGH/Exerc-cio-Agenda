@@ -2,8 +2,8 @@ from flask import Flask, render_template, redirect, request
 app = Flask('app')
 
 contacts = [
-  { 'title': 'João da Silva'},
-  { 'title': 'Maria Souza'}
+  { 'name': 'João da Silva'},
+  { 'name': 'Maria Souza'}
 ]
 
 @app.route('/')
@@ -15,8 +15,10 @@ def agenda():
   
 @app.route('/create', methods=['POST'])
 def create():
-  title = request.form.get('title')
-  contacts.append({'title': title})
+  name = request.form.get('name')
+  email = request.form.get('email')
+  phone = request.form.get('phone')
+  contacts.append({'name': name, 'email': email, 'phone': phone, 'complete':False} )
   return redirect('/')
     
 if __name__ == '__main__':
