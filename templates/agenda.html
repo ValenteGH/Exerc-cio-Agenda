@@ -18,9 +18,18 @@
   </form>
   <ul>
     {% for name in contacts %}
-      <li>{{ name['name'] }}</li>
-      
+      <li>{{ name['name'] }}
+          {% if contact['complete'] == False %}
+            <a href="/complete/{{ loop.agenda0 }}">
+             Completar
+            </a>
+          {% endif %}
+        <a href="/delete/{{ loop.agenda0 }}">
+          Deletar
+        </a>
+      </li>
     {% endfor %}
-  </ul>  
+  </ul>
+
 </body>
 </html>
