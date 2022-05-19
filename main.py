@@ -37,6 +37,8 @@ def update(agenda):
  email = request.form.get('email')
  phone = request.form.get('phone')
  contacts[agenda]['name'] = name
+ contacts[agenda]['email'] = email
+ contacts[agenda]['phone'] = phone
  return redirect('/')
 
 
