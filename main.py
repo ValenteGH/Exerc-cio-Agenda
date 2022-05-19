@@ -31,6 +31,15 @@ def complete(agenda):
  contacts[agenda]['complete'] = True
  return redirect('/')
 
+@app.route('/update/<int:agenda>', methods=['POST'])
+def update(agenda):
+ name = request.form.get('name')
+ email = request.form.get('email')
+ phone = request.form.get('phone')
+ contacts[agenda]['name'] = name
+ return redirect('/')
+
+
     
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=8080)

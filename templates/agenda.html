@@ -19,18 +19,18 @@
   <ul>
     {% for name in contacts %}
       <li>
-          <form action="/update/{{ loop.agenda0 }}" method="POST">
+          <form action="/update/{{ loop.index0 }}" method="POST">
              <input name="name" value="{{ name['name'] }}">
              <input name="email" value="{{ name['email'] }}">
              <input name="phone" value="{{ name['phone'] }}">
              <button type="submit">Editar</button>
           </form>
           {% if contacts['complete'] == False %}
-            <a href="/complete/{{ loop.agenda0 }}">
+            <a href="/complete/{{ loop.index0 }}">
                Completar
             </a>
           {% endif %}
-          <a href="/delete/{{ loop.agenda0 }}">
+          <a href="/delete/{{ 0 }}">
             ❌
           </a>
       </li>
