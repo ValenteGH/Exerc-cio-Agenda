@@ -16,20 +16,23 @@
       Adicionar
     </button>
   </form>
-  <ul>
-    {% for name in contacts %}
-      <li>{{ name['name'] }}
-          {% if contact['complete'] == False %}
-            <a href="/complete/{{ loop.agenda0 }}">
-             Completar
-            </a>
-          {% endif %}
-          <a href="/delete/{{ loop.agenda0 }}">
-            Deletar
-          </a>
-      </li>
-    {% endfor %}
-  </ul>
+    <ul> 
+        {% for contact in contacts %}
+          <li>
+            <form action="/update/{{contact[0]}}" method="POST">
+              <input name="name" value="{{ contact[1] }}">
+              <input name="email" value="{{ contact[2] }}">
+              <input name="phone" value="{{ contact[3] }}">
+              <button type="submit"">&#9998;</button>
+              {% if contact[5] == 0 %}
+                <a href="/complete/{{ contact[0] }}">✅</a>
+              {% endif %}
+              <a href="/delete/{{ contact[0] }}">❌</a>
+            </form>            
+          </li>
+          
+        {% endfor %}
+    </ul>
 
 </body>
 </html>
