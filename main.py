@@ -2,8 +2,8 @@ from flask import Flask, render_template, redirect, request
 app = Flask('app')
 
 contacts = [
-  { 'name': 'João da Silva', },
-  { 'name': 'Maria Souza', }
+  { 'name': 'João da Silva','email':'joao@gmail.com','phone':'(16)99922-1122' },
+  { 'name': 'Maria Souza','email':'maria1@gmail.com','phone':'(16)99922-3333' }
 ]
 
 @app.route('/')
